@@ -19,8 +19,8 @@ root.render(
   <SensorProvider>
     <Routes>
       <Route path="/admin/*" element={<AdminLayout />} />
-      {/* Các route khác */}
       <Route path="*" element={<Navigate to="/admin/index" replace />} />
+      
     </Routes>
   </SensorProvider>
 </BrowserRouter>

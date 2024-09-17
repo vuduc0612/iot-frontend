@@ -57,7 +57,7 @@ const DataSensor = () => {
       setSearchQuery(searchQuery);
       setSelectedSearchType(selectedSearchType);
     }
-    console.log(apiUrl);
+    //console.log(apiUrl);
     fetch(apiUrl, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -73,11 +73,11 @@ const DataSensor = () => {
   };
 
   useEffect(() => {
-    console.log("API call");
+   // console.log("API call");
     fetchData(sortKey, order, currentPage, 12, searchQuery, selectedSearchType);
   }, [sortKey, order, currentPage, searchQuery]);
 
-  console.log("hello");
+  //console.log("hello");
   //console.log(sensors);
   return (
     <>
@@ -86,7 +86,7 @@ const DataSensor = () => {
         <Row>
           <div className="col">
             <Card className="shadow pt-4">
-              <CardHeader className="border-0 pt-6 pb-4">
+              <CardHeader className="border-0 pt-5 pb-4">
                 <Form className="navbar-search navbar-search-white form-inline  d-none d-md-flex ml-lg-4">
                   {isClickSearch && (
                     <SearchDropdown
@@ -109,7 +109,7 @@ const DataSensor = () => {
                         value={searchQuery}
                         onChange={(e) => {
                           setSearchQuery(e.target.value);
-                          console.log(e.target.value);
+                          //console.log(e.target.value);
                         }}
                         onClick={() => setClickSearch(true)}
                       />
@@ -170,7 +170,7 @@ const DataSensor = () => {
                       <td style={{ textAlign: "center" }}>{sensor.humidity}</td>
                       <td style={{ textAlign: "center" }}>{sensor.light}</td>
                       <td style={{ textAlign: "center" }}>
-                        {format(new Date(sensor.updatedAt), "dd/MM/yyyy HH:mm:ss")}
+                        {format(new Date(sensor.updatedAt), "HH:mm:ss dd/MM/yyyy")}
                       </td>
                     </tr>
                   ))}

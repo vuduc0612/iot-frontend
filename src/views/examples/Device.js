@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 import SortDropdown from "./SortDropDown";
 import PaginationComponent from "./PaginationComponent";
 import { BASE_URL_API } from "constants";
+import {format} from "date-fns/format";
 
 const Device = () => {
   const [leds, setLeds] = useState([]);
@@ -56,13 +57,14 @@ const Device = () => {
   console.log(leds);
   return (
     <>
+      <AdminNavbar brandText="Data Led" />
       <Container className="mt-0" fluid>
-        <AdminNavbar brandText="Data Led" />
+        
         {/* Table */}
-        <Row>
+        <Row className="mt-0">
           <div className="col">
             <Card className="shadow pt-4">
-              <CardHeader className="border-0 pt-6 pb-4">
+              <CardHeader className="border-0 pt-5 pb-4">
                 <Form className="navbar-search navbar-search-white form-inline  d-none d-md-flex ml-lg-4">
                   <FormGroup className="mb-0">
                     <InputGroup className="input-group-alternative ">
@@ -120,7 +122,7 @@ const Device = () => {
                       <td style={{ textAlign: "center" }}>
                         {led.status ? "ON" : "OFF"}
                       </td>
-                      <td style={{ textAlign: "center" }}>{led.updatedAt}</td>
+                      <td style={{ textAlign: "center" }}>{format(new Date(led.updatedAt), "HH:mm:ss dd/MM/yyyy")}</td>
                     </tr>
                   ))}
                 </tbody>

@@ -4,7 +4,6 @@ const Footer = () => {
   return (
     <footer
       className="footer bg-gradient-neutral-footer"
-      
     >
       <Row className="align-items-center justify-content-xl-between">
         <Col xl="6">

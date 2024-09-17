@@ -1,8 +1,6 @@
-import { BASE_URL_API } from "constants";
-import { useEffect, useState } from "react";
+
 import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
 
-import { io } from "socket.io-client";
 import { useSensor } from "views/examples/SensorContext";
 const getCardClass = (value, type) => {
   if (type === 'temperature') {
@@ -11,8 +9,8 @@ const getCardClass = (value, type) => {
     if (value >= 14 && value <= 28) return 'card-warm';
     return 'card-hot';
   } else if (type === 'light') {
-    if (value < 500) return 'card-low-light';
-    if (value >= 500 && value <= 1500) return 'card-medium-light';
+    if (value < 200) return 'card-low-light';
+    if (value <= 700) return 'card-medium-light';
     return 'card-high-light';
   } else if (type === 'humidity') {
     if (value < 30) return 'card-dry';
@@ -21,29 +19,11 @@ const getCardClass = (value, type) => {
   }
 };
 const Header = () => {
-  // const [temperature, setTemperature] = useState(1);
-  // const [light, setLight] = useState(0);
-  // const [humidity, setHumidity] = useState(0);
-
-  // useEffect(() => {
-  //   const socket = io(BASE_URL_API); // Kết nối tới WebSocket server
-  //   socket.on("sensorData", (data) => {
-  //     //console.log(data);
-  //     const { humidity, temperature, light } = JSON.parse(data);
-  //     //console.log(temperature, light, humidity);
-  //     setTemperature(Math.round(temperature));
-  //     setLight(Math.round(light));
-  //     setHumidity(Math.round(humidity));
-  //   });
-
-  //   return () => {
-  //     socket.disconnect(); 
-  //   };
-  // }, []);
+ 
   const { temperature, light, humidity } = useSensor();
   return (
     <>
-      <div className="header  pb-9 pt-6" style={{height: '180px'}}>
+      <div className="header pb-9 pt-6 ml-2 mr-2" style={{height: '180px'}}>
         <Container fluid>
           <div className="header-body">
             {/* Card stats */}
@@ -75,9 +55,9 @@ const Header = () => {
                         </div>
                       </Col>
                     </Row>
-                    <p className="mt-3 mb-0 text-muted text-sm">
+                    <p className="mt-2 mb-0 text-muted text-sm">
                       <span className="text-success mr-2">
-                        <i className="fa fa-arrow-up" /> 3.48%
+                        
                       </span>{" "}
                       
                     </p>
@@ -109,9 +89,9 @@ const Header = () => {
                         </div>
                       </Col>
                     </Row>
-                    <p className="mt-3 mb-0 text-muted text-sm">
+                    <p className="mt-2 mb-0 text-muted text-sm">
                       <span className="text-danger mr-2">
-                        <i className="fas fa-arrow-down" /> 3.48%
+                        
                       </span>{" "}
                       
                     </p>
@@ -143,9 +123,9 @@ const Header = () => {
                         </div>
                       </Col>
                     </Row>
-                    <p className="mt-3 mb-0 text-muted text-sm">
+                    <p className="mt-2 mb-0 text-muted text-sm">
                       <span className="text-warning mr-2">
-                        <i className="fa-solid fa-droplet" /> 1.10%
+                        
                       </span>{" "}
                       
                     </p>

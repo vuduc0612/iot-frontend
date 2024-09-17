@@ -2,7 +2,7 @@
 import Index from "views/Index.js";
 import Profile from "views/examples/Profile.js";
 import Device from "views/examples/Device.js";
-import Tables from "views/examples/Tables.js";
+
 import DataSensor from "views/examples/DataSensor.js";
 
 var routes = [

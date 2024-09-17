@@ -8,6 +8,7 @@ import Header from "components/Headers/Header.js";
 import ToggleButton from "./examples/ToggleButton";
 import { BASE_URL_API } from "../constants";
 import RealTimeChart from "variables/charts";
+import AdminNavbar from "components/Navbars/AdminNavbar";
 const Index = (props) => {
   const [isActive1, setIsActive1] = useState(false);
   const [isActive2, setIsActive2] = useState(false);
@@ -86,13 +87,15 @@ const Index = (props) => {
   };
 
   return (
-    <>
+    <><AdminNavbar brandText="DashBoard" />
       <Header />
+      
       <Container
-        className="mt-3"
+        className="mt--2"
         fluid
-        style={{ paddingLeft: "2rem", paddingRight: "0.5rem" }}
+        style={{ paddingLeft: "2rem", paddingRight: "1rem" }}
       >
+        
         <Row>
           <Col className="mb-5 mb-xl-0 pl-0" xl="10">
             <Card className="bg-gradient-default shadow mb-0">

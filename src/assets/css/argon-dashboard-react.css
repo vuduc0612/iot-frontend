@@ -21663,11 +21663,11 @@ th, td {
 }
 
 .card-medium-light {
-  background-color: #dce775;
+  background-color: #fed330;
 }
 
 .card-high-light {
-  background-color: #d4e157;
+  background-color: #ffa502;
 }
 
 .card-dry {
@@ -21675,9 +21675,12 @@ th, td {
 }
 
 .card-normal-humidity {
-  background-color: #aed581;
+  background-color: #25CCF7;
 }
 
 .card-humid {
-  background-color: #ffccbc;
+  background-color: #70a1ff;
+}
+.txt-white{
+  color: #dfe4ea;
 }
