@@ -65,7 +65,7 @@ export const lineChartOptionsDashboard = {
         font: {
           size: 12
         },
-        stepSize: 5 // Khoảng cách giữa các bậc đơn vị trên trục y
+        stepSize: 70 // Khoảng cách giữa các bậc đơn vị trên trục y
       }
     }
   },

@@ -5,7 +5,6 @@ import {
   CardBody,
   FormGroup,
   Form,
-  Input,
   Container,
   Row,
   Col,
@@ -45,7 +44,6 @@ const Profile = () => {
                 </Row>
                 <div className="text-center">
                   <div className="h5 mt-5">
-                    
                     <h3>Vu Huu Duc</h3>
                   </div>
                   <div>
@@ -85,114 +83,92 @@ const Profile = () => {
                     <Row>
                       <Col lg="6">
                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-username"
-                          >
+                          <label className="form-control-label">
                             Full Name
                           </label>
-                          <Input
-                            className="form-control-alternative"
-                            defaultValue="Vu Huu Duc"
-                            id="input-username"
-                            placeholder="Username"
-                            type="text"
-                          />
+                          <p>Vu Huu Duc</p>
                         </FormGroup>
                       </Col>
                       <Col lg="6">
                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-email"
-                          >
+                          <label className="form-control-label">
                             Email address
                           </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="input-email"
-                            placeholder="vuhuuduc1206@gmail.com"
-                            type="email"
-                          />
+                          <p>vuhuuduc1206@gmail.com</p>
                         </FormGroup>
                       </Col>
                     </Row>
                     <Row>
                       <Col lg="6">
                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-first-name"
-                          >
+                          <label className="form-control-label">
                             Student ID
                           </label>
-                          <Input
-                            className="form-control-alternative"
-                            defaultValue="B21DCCN259"
-                            id="input-first-name"
-                            placeholder=""
-                            type="text"
-                          />
+                          <p>B21DCCN259</p>
                         </FormGroup>
                       </Col>
                       <Col lg="6">
                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-last-name"
-                          >
-                            Class
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            defaultValue="D21CNPM4"
-                            id="input-last-name"
-                            placeholder="Last name"
-                            type="text"
-                          />
+                          <label className="form-control-label">Class</label>
+                          <p>D21CNPM4</p>
                         </FormGroup>
                       </Col>
                     </Row>
                   </div>
                   <hr className="my-4" />
                   {/* Address */}
-                 
                   <div className="pl-lg-4">
-                    
                     <Row>
                       <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-city"
-                          >
-                            City
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            defaultValue="Ha Noi"
-                            id="input-city"
-                            placeholder="City"
-                            type="text"
-                          />
-                        </FormGroup>
+                        <label className="form-control-label mr-3">
+                          API docs:
+                        </label>
+
+                        <a
+                          href="http://localhost:3333/api"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          http://localhost:3333/api
+                        </a>
+                        <br />
+                        <label className="form-control-label mr-3">
+                          Báo cáo:
+                        </label>
+                        <a
+                          href="http://localhost:3333/api"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          http://surl.li/cbkpcd
+                        </a>
                       </Col>
-                     
+
                       <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-country"
-                          >
-                            Github
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="input-postal-code"
-                            placeholder="https://github.com/vuduc0612/IoT"
-                            type="number"
-                          />
-                        </FormGroup>
+                        <label className="form-control-label mr-3">
+                          Github FrontEnd:
+                        </label>
+
+                        <a
+                          href="https://github.com/vuduc0612/IoT"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                         
+                        >
+                          https://github.com/vuduc0612/iot-frontend
+                        </a>
+                        <br />
+                        <label className="form-control-label mr-3">
+                          Github BackEnd:
+                        </label>
+                        <a
+                          href="https://github.com/vuduc0612/iot-backend"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          
+                        >
+                          https://github.com/vuduc0612/iot-backend
+                        </a>
                       </Col>
                     </Row>
                   </div>
@@ -202,13 +178,7 @@ const Profile = () => {
                   <div className="pl-lg-4">
                     <FormGroup>
                       <label>About Me</label>
-                      <Input
-                        className="form-control-alternative"
-                        placeholder="A few words about you ..."
-                        rows="4"
-                        defaultValue="A beautiful Dashboard"
-                        type="textarea"
-                      />
+                      <p>A beautiful Dashboard</p>
                     </FormGroup>
                   </div>
                 </Form>

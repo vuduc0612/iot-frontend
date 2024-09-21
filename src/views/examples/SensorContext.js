@@ -17,7 +17,7 @@ export const SensorProvider = ({ children }) => {
   const [chartData, setChartData] = useState({
     labels: [],
     datasets: [
-      { label: 'Temperature (°C)', data: [], borderColor: '#0075FF', backgroundColor: 'rgba(0, 117, 255, 0.3)', fill: true, tension: 0.4 },
+      { label: 'Temperature (°C)', data: [], borderColor: '#ff7979', backgroundColor: 'rgba(255, 121, 121, 0.4)', fill: true, tension: 0.4 },
       { label: 'Humidity (%)', data: [], borderColor: '#00FF7F', backgroundColor: 'rgba(0, 255, 127, 0.3)', fill: true, tension: 0.4 },
       { label: 'Light (Lux)', data: [], borderColor: '#2CD9FF', backgroundColor: 'rgba(44, 217, 255, 0.3)', fill: true, tension: 0.4 },
     ],
@@ -35,8 +35,8 @@ export const SensorProvider = ({ children }) => {
 
       // Cập nhật dữ liệu biểu đồ
       setChartData(prevData => {
-        const newLabels = [...prevData.labels, currentTime].slice(-15); // Giữ tối đa 20 label
-        const newTemperatureData = [...prevData.datasets[0].data, Math.round(celsiusToKelvin(temperature))].slice(-15);
+        const newLabels = [...prevData.labels, currentTime].slice(-15); 
+        const newTemperatureData = [...prevData.datasets[0].data, Math.round(temperature)].slice(-15);
         const newHumidityData = [...prevData.datasets[1].data, Math.round(humidity)].slice(-15);
         const newLightData = [...prevData.datasets[2].data, Math.round(light)].slice(-15);
 
