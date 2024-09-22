@@ -66,7 +66,7 @@ const DataSensor = () => {
         console.log("Type: ", selectedSearchType.value);
         apiUrl += `&selectedSearchType=${selectedSearchType.value}`;
         if (selectedSearchType.value === "updatedAt" && searchQuery) {
-          apiUrl += `&searchQuery=${searchQuery}`;
+          apiUrl += `&searchQuery=${encodeURIComponent(searchQuery)}`;
         } else if (searchQuery) {
           apiUrl += `&searchQuery=${encodeURIComponent(searchQuery)}`;
         }
@@ -115,7 +115,7 @@ const DataSensor = () => {
         <AdminNavbar brandText="Data Sensor" />
         <Row>
           <div className="col">
-            <Card className="shadow pt-4">
+            <Card className="shadow pt-5">
               <CardHeader className="border-0 pt-5 pb-4">
                 <Form className="navbar-search navbar-search-white form-inline d-none d-md-flex ml-lg-4">
                   {/* Dropdown chọn loại tìm kiếm */}
@@ -154,7 +154,7 @@ const DataSensor = () => {
                         <Input
                           placeholder={
                             selectedSearchType
-                              ? `Tìm kiếm ${selectedSearchType.value}`
+                              ? `Search by ${selectedSearchType.value}`
                               : "Search"
                           }
                           type="text"
@@ -254,12 +254,12 @@ const DataSensor = () => {
                         min="1"
                         max="100"
                         value={pageLimit}
-                        style={{ textAlign: "center" }} // Căn giữa dữ liệu
+                        style={{ textAlign: "center" }} 
                         onChange={(e) =>
                           setPageLimit(
                             Math.min(Math.max(e.target.value, 1), 100)
                           )
-                        } // Đảm bảo giá trị từ 1 đến 100
+                        } 
                         className="custom-number-input"
                       />
                     </InputGroup>

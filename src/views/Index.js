@@ -91,7 +91,7 @@ const Index = (props) => {
       <Header />
       
       <Container
-        className="mt--2"
+        className="mt-0"
         fluid
         style={{ paddingLeft: "2rem", paddingRight: "1rem" }}
       >
@@ -120,25 +120,19 @@ const Index = (props) => {
           </Col>
 
           <Col xl="2" className="pl-0">
-            <div>
-              <h2
-                className="d-flex justify-content-center mb-3 pb-2"
-                style={{ fontSize: "1.5rem" }}
-              >
-                Controller
-              </h2>
-            </div>
+           
             <Card
               className="shadow"
               style={{
-                backgroundColor: "#d0edff",
-                height: "25%",
+                
+                height: "30%",
                 border: "2px solid #ccc",
                 borderRadius: "8px",
               }}
-            >
+            > 
+            <h3 className="text-black mt-3 mb-0 pt-2" style={{textAlign: 'center'}}>Điều khiển đèn</h3>
               <Row className="align-items-center h-100">
-                <div className="col ml-3">
+                <div className="col ml-4">
                   <ToggleButton
                     isActive={isActive1}
                     setActive={(newState) => handleToggleDevice(1, newState)}
@@ -146,26 +140,29 @@ const Index = (props) => {
                 </div>
                 <div className="icon text-white rounded-circle shadow mr-4">
                   <i
-                    className="fa-regular fa-lightbulb"
+                  
+                    className="fa-solid fa-lightbulb"
                     style={{
                       fontSize: "40px",
-                      color: isActive1 ? "#ffa502" : "#333333",
+                      color: isActive1 ? "#fff200" : "#333333",
                     }}
                   ></i>
                 </div>
               </Row>
             </Card>
             <Card
-              className="shadow my-3"
+              className="shadow my-4"
               style={{
-                backgroundColor: "#d0edff",
-                height: "25%",
+                
+                height: "30%",
                 border: "2px solid #ccc",
                 borderRadius: "8px",
               }}
             >
+              <h3 className="text-black mt-3 mb-0 pt-2" style={{textAlign: 'center'}}>Điều khiển quạt</h3>
+              
               <Row className="align-items-center h-100">
-                <div className="col ml-3">
+                <div className="col ml-4">
                   <ToggleButton
                     isActive={isActive2}
                     setActive={(newState) => handleToggleDevice(2, newState)}
@@ -173,10 +170,10 @@ const Index = (props) => {
                 </div>
                 <div className="icon icon-shapetext-white shadow mr-4">
                   <i
-                    className="fa-solid fa-temperature-half"
+                    className="fa-solid fa-fan"
                     style={{
                       fontSize: "40px",
-                      color: isActive2 ? "#EA2027" : "#333333",
+                      color: isActive2 ? "#fa983a" : "#333333",
                     }}
                   />
                 </div>
@@ -185,14 +182,15 @@ const Index = (props) => {
             <Card
               className="shadow"
               style={{
-                backgroundColor: "#d0edff",
-                height: "25%",
+                
+                height: "30%",
                 border: "2px solid #ccc",
                 borderRadius: "8px",
               }}
             >
+              <h3 className="text-black mt-3 mb-0 pt-2" style={{textAlign: 'center'}}>Điều khiển đèn</h3>
               <Row className="align-items-center h-100">
-                <div className="col ml-3">
+                <div className="col ml-4">
                   <ToggleButton
                     isActive={isActive3}
                     setActive={(newState) => handleToggleDevice(3, newState)}
@@ -200,7 +198,7 @@ const Index = (props) => {
                 </div>
                 <div className="icon text-white rounded-circle shadow mr-4">
                   <i
-                    className="fa-solid fa-droplet"
+                    className="fa-regular fa-snowflake"
                     style={{
                       fontSize: "40px",
                       color: isActive3 ? "#45aaf2" : "#333333",

@@ -21607,7 +21607,7 @@ th, td {
   transform: translateY(-50%);
 }
 .toggle-btn.toggled{
-  background-color: #ff6a3c;
+  background-color: #007BFF;
 
 }
 .toggle-btn:hover {
@@ -21659,15 +21659,15 @@ th, td {
 }
 
 .card-low-light {
-  background-color: #f0f4c3;
+  background-color: #ffc048;
 }
 
 .card-medium-light {
-  background-color: #fed330;
+  background-color: #fff200;
 }
 
 .card-high-light {
-  background-color: #ffa502;
+  background-color:  #fffa65;
 }
 
 .card-dry {

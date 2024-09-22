@@ -9,7 +9,7 @@ const getCardClass = (value, type) => {
     if (value >= 14 && value <= 28) return 'card-warm';
     return 'card-hot';
   } else if (type === 'light') {
-    if (value < 200) return 'card-low-light';
+    if (value < 300) return 'card-low-light';
     if (value <= 700) return 'card-medium-light';
     return 'card-high-light';
   } else if (type === 'humidity') {
