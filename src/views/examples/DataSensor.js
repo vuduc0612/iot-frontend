@@ -28,8 +28,8 @@ import { BASE_URL_API } from "constants";
 const DataSensor = () => {
   const [sensors, setSensors] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
-  const [sortKey, setSortKey] = useState("");
-  const [order, setOrder] = useState("");
+  const [sortKey, setSortKey] = useState("updatedAt");
+  const [order, setOrder] = useState("desc");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSearchType, setSelectedSearchType] = useState(null);
@@ -70,6 +70,9 @@ const DataSensor = () => {
         } else if (searchQuery) {
           apiUrl += `&searchQuery=${encodeURIComponent(searchQuery)}`;
         }
+      }
+      else if(searchQuery){
+        apiUrl += `&searchQuery=${encodeURIComponent(searchQuery)}`
       }
       console.log(apiUrl);
 

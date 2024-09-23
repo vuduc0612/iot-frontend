@@ -64,6 +64,9 @@ const Device = () => {
           apiUrl += `&searchQuery=${encodeURIComponent(searchQuery)}`;
         }
       }
+      else if(searchQuery){
+        apiUrl += `&searchQuery=${encodeURIComponent(searchQuery)}`;
+      }
       console.log("API URL: ", apiUrl);
       const response = await fetch(apiUrl, {
         method: "GET",
