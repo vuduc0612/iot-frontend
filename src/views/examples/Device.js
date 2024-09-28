@@ -24,8 +24,9 @@ import SearchDropdown from "./SearchDropDown";
 
 const Device = () => {
   const searchOptions = [
-    { label: "Name", value: "name" },
-    { label: "Action", value: "status" },
+    // { label: "All", value: "" },
+    // { label: "Name", value: "name" },
+    // { label: "Action", value: "status" },
     { label: "Time", value: "updatedAt" },
   ];
 
@@ -36,7 +37,7 @@ const Device = () => {
   const [order, setOrder] = useState("desc");
   const [selectedSearchType, setSelectedSearchType] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [isClickSearch, setClickSearch] = useState(false);
+  const [isClickSearch, setClickSearch] = useState(true);
   const [pageLimit, setPageLimit] = useState(12);
   const [error, setError] = useState(null);
 

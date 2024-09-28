@@ -3,6 +3,7 @@ import { BASE_URL_API } from 'constants';
 import React, { createContext, useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import format from 'date-fns/format';
+import { set } from 'date-fns';
 
 const SensorContext = createContext();
 
@@ -10,6 +11,10 @@ export const SensorProvider = ({ children }) => {
   const [temperature, setTemperature] = useState(null);
   const [light, setLight] = useState(null);
   const [humidity, setHumidity] = useState(null);
+  const [windy, setWindy] = useState(null);
+  const [stled1, setStled1] = useState(null);
+  const [stled2, setStled2] = useState(null);
+  const [stled3, setStled3] = useState(null);
   const celsiusToKelvin = (celsius) => {
     return celsius + 273.15;
   };
@@ -26,12 +31,17 @@ export const SensorProvider = ({ children }) => {
   useEffect(() => {
     const socket = io(BASE_URL_API);
     socket.on('sensorData', (data) => {
-      const { temperature, light, humidity } = JSON.parse(data);
+      //console.log(data)
+      const { temperature, light, humidity, windy, stled1, stled2, stled3 } = JSON.parse(data);
       const currentTime = format(new Date(), 'HH:mm:ss');
-
+      
       setTemperature(Math.round(temperature));
       setLight(Math.round(light));
       setHumidity(Math.round(humidity));
+      setWindy(Math.round(windy));
+      setStled1(stled1);
+      setStled2(stled2);
+      setStled3(stled3);
 
       // Cập nhật dữ liệu biểu đồ
       setChartData(prevData => {
@@ -57,7 +67,7 @@ export const SensorProvider = ({ children }) => {
   }, []);
 
   return (
-    <SensorContext.Provider value={{ temperature, light, humidity, chartData }}>
+    <SensorContext.Provider value={{ temperature, light, humidity, windy, stled1, stled2, stled3, chartData }}>
       {children}
     </SensorContext.Provider>
   );

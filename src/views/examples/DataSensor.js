@@ -14,7 +14,6 @@ import {
   InputGroupText,
   Input,
   Col,
-  Button,
 } from "reactstrap";
 import { useEffect, useState } from "react";
 import SortDropdown from "./SortDropDown";
@@ -35,11 +34,12 @@ const DataSensor = () => {
   const [selectedSearchType, setSelectedSearchType] = useState(null);
   const [pageLimit, setPageLimit] = useState(12);
 
-  const [isClickSearch, setClickSearch] = useState(false);
+  const [isClickSearch, setClickSearch] = useState(true);
   const [error, setError] = useState(null);
 
   // Các tùy chọn tìm kiếm
   const searchOptions = [
+    { label: "All", value: "" },
     { label: "Temperature", value: "temperature" },
     { label: "Humidity", value: "humidity" },
     { label: "Light", value: "light" },
